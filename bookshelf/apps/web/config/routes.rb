@@ -3,9 +3,11 @@
 #
 # Example:
 # get '/hello', to: ->(env) { [200, {}, ['Hello from Hanami!']] }
-post '/books', to: 'books#create'
-get '/books/new', to: 'books#new'
-get '/books', to: 'books#index'
+# post '/books', to: 'books#create'
+# get '/books/new', to: 'books#new'
+# get '/books', to: 'books#index'
 get '/', to: 'home#index'
 
 root to: 'home#index'
+
+resources :books, only: [:index, :new, :create]
